@@ -122,6 +122,11 @@ public class AsistenciaService {
             throw new RuntimeException("Tipo de registro inválido. Use 'entrada' o 'salida'");
         }
         
+        // Guardar metodo de verificacion
+        if (request.getMetodoVerificacion() != null) {
+            asistencia.setMetodoVerificacion(request.getMetodoVerificacion());
+        }
+
         // Guardar observaciones si existen
         if (request.getObservaciones() != null && !request.getObservaciones().trim().isEmpty()) {
             String observacionesActuales = asistencia.getObservaciones();

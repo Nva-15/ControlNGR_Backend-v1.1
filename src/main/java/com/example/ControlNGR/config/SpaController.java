@@ -30,7 +30,8 @@ public class SpaController implements ErrorController {
         "/reportes",
         "/eventos",
         "/eventos/{id}",
-        "/eventos/{id}/estadisticas"
+        "/eventos/{id}/estadisticas",
+        "/marcar-asistencia"
     })
     public String forwardToIndex() {
         return "forward:/index.html";

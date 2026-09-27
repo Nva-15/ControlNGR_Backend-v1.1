@@ -9,7 +9,8 @@ public class AsistenciaRequestDTO {
     private LocalDate fecha;
     private LocalTime hora;
     private String observaciones;
-    
+    private String metodoVerificacion;
+
     // Getters y Setters
     public Integer getEmpleadoId() { return empleadoId; }
     public void setEmpleadoId(Integer empleadoId) { this.empleadoId = empleadoId; }
@@ -25,4 +26,7 @@ public class AsistenciaRequestDTO {
     
     public String getObservaciones() { return observaciones; }
     public void setObservaciones(String observaciones) { this.observaciones = observaciones; }
+
+    public String getMetodoVerificacion() { return metodoVerificacion; }
+    public void setMetodoVerificacion(String metodoVerificacion) { this.metodoVerificacion = metodoVerificacion; }
 }

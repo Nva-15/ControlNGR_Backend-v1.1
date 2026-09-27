@@ -32,7 +32,10 @@ public class Asistencia {
     
     @Column(name = "salida_automatica")
     private Boolean salidaAutomatica = false;
-    
+
+    @Column(name = "metodo_verificacion", length = 20)
+    private String metodoVerificacion = "manual"; // manual, facial, pin
+
     // Constructores
     public Asistencia() {}
     
@@ -103,6 +106,14 @@ public class Asistencia {
 
 	public void setSalidaAutomatica(Boolean salidaAutomatica) {
 		this.salidaAutomatica = salidaAutomatica;
-	}    
-    
+	}
+
+	public String getMetodoVerificacion() {
+		return metodoVerificacion;
+	}
+
+	public void setMetodoVerificacion(String metodoVerificacion) {
+		this.metodoVerificacion = metodoVerificacion;
+	}
+
 }

@@ -48,6 +48,7 @@ public class WebSecurityConfig {
                     "/horarios",
                     "/organigrama",
                     "/reportes",
+                    "/marcar-asistencia",
                     "/eventos",
                     "/eventos/**",
                     "/img/**",
@@ -58,6 +59,7 @@ public class WebSecurityConfig {
                     "/uploads/**",
                     "/assets/**",
                     "/media/**",
+                    "/models/**",
                     "/favicon.ico",
                     "/*.png",
                     "/*.jpg",
@@ -112,6 +114,15 @@ public class WebSecurityConfig {
                 // NOTIFICACIONES - Todos los roles
                 .requestMatchers("/api/notificaciones/**")
                     .hasAnyRole("ADMIN", "SUPERVISOR", "TECNICO", "HD", "NOC")
+
+                // FACE RECOGNITION - Ver descriptores y enroll (todos los roles autenticados)
+                .requestMatchers(HttpMethod.GET, "/api/face/**")
+                    .hasAnyRole("ADMIN", "SUPERVISOR", "TECNICO", "HD", "NOC")
+                .requestMatchers(HttpMethod.POST, "/api/face/enroll")
+                    .hasAnyRole("ADMIN", "SUPERVISOR", "TECNICO", "HD", "NOC")
+                // FACE RECOGNITION - Eliminar (solo admin/supervisor)
+                .requestMatchers(HttpMethod.DELETE, "/api/face/**")
+                    .hasAnyRole("ADMIN", "SUPERVISOR")
 
                 .requestMatchers("/api/asistencia/**", "/api/solicitudes/**")
                     .hasAnyRole("ADMIN", "SUPERVISOR", "TECNICO", "HD", "NOC")

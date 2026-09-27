@@ -14,7 +14,8 @@ public class AsistenciaResponseDTO {
     private String estado;
     private String observaciones;
     private Boolean salidaAutomatica;
-    
+    private String metodoVerificacion;
+
     public AsistenciaResponseDTO() {}
     
     public AsistenciaResponseDTO(Asistencia asistencia) {
@@ -27,6 +28,7 @@ public class AsistenciaResponseDTO {
         this.estado = asistencia.getEstado();
         this.observaciones = asistencia.getObservaciones();
         this.salidaAutomatica = asistencia.getSalidaAutomatica();
+        this.metodoVerificacion = asistencia.getMetodoVerificacion();
     }
 
 	public Integer getId() {
@@ -100,5 +102,13 @@ public class AsistenciaResponseDTO {
 	public void setSalidaAutomatica(Boolean salidaAutomatica) {
 		this.salidaAutomatica = salidaAutomatica;
 	}
-    
+
+	public String getMetodoVerificacion() {
+		return metodoVerificacion;
+	}
+
+	public void setMetodoVerificacion(String metodoVerificacion) {
+		this.metodoVerificacion = metodoVerificacion;
+	}
+
 }
